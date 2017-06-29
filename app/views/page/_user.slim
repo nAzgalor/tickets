@@ -1,0 +1,4 @@
+li 
+  = user.email
+  | | 
+  = link_to 'show a message', new_personal_message_path(receiver_id: user)

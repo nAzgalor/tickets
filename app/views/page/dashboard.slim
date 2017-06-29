@@ -1,0 +1,7 @@
+h1 you have #{@messages_count} unread messages
+
+= link_to 'Check new message', dashboard_path
+
+ul
+  - @users.each do |user|
+    == render 'page/user', user: user

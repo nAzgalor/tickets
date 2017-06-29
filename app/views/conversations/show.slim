@@ -1,0 +1,12 @@
+h1 Chatting with #{@conversation.with(current_user).email}
+
+#conversation-main
+  #conversation-body
+    = render @conversation.personal_messages
+
+  = form_for @personal_message do |f|
+    = hidden_field_tag 'conversation_id', @conversation.id
+    = f.label :body
+    = f.text_area :body
+
+    = f.submit

@@ -1,0 +1,16 @@
+table
+  thead
+    tr
+      th user id
+      th email
+      th
+
+  tbody
+    tr: td colspan='3' = link_to 'Add New User', new_admin_user_path
+    - @users.each do |u|
+      tr
+        td = u.id
+        td = u.email
+        td
+          = link_to 'Edit', edit_admin_user_path(u)
+          = link_to 'Destroy', admin_user_path(u), method: :delete, data: { confirm: 'Are you sure?' }
